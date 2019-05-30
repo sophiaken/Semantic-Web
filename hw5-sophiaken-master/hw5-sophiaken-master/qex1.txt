@@ -1,0 +1,11 @@
+# Who are Donald Trump's children and what schools did they attend?
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX yago: <http://dbpedia.org/class/yago/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT  ?child ?school
+WHERE {dbr:Donald_Trump dbo:child ?child.
+       ?child dbo:almaMater ?school.}

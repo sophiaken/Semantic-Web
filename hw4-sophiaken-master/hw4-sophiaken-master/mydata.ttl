@@ -1,0 +1,115 @@
+@prefix : <http://change.this.to.your.github.raw.data.file.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://change.this.to.your.github.raw.data.file.ttl> .
+
+<http://change.this.to.your.github.raw.data.file.ttl> rdf:type owl:Ontology ;
+                                                       owl:imports <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26> ;
+                                                       rdfs:comment "hw4 data" .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://change.this.to.your.github.raw.data.file.ttl#Aaron
+:Aaron rdf:type owl:NamedIndividual ;
+       <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasAge> 1 ;
+       <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSex> "Male" .
+
+
+###  http://change.this.to.your.github.raw.data.file.ttl#Angel
+:Angel rdf:type owl:NamedIndividual ;
+       <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasAge> 12 ;
+       <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSex> "Female" .
+
+
+###  http://change.this.to.your.github.raw.data.file.ttl#Baltimore
+:Baltimore rdf:type owl:NamedIndividual ;
+           <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Latitude> 39.29058 ;
+           <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Longitude> -76.60926 .
+
+
+###  http://change.this.to.your.github.raw.data.file.ttl#Chennai
+:Chennai rdf:type owl:NamedIndividual ;
+         <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Latitude> 13.07694 ;
+         <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Longitude> 80.26628 .
+
+
+###  http://change.this.to.your.github.raw.data.file.ttl#Facebook
+:Facebook rdf:type owl:NamedIndividual ;
+          <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasEmployee> :Kennedy ;
+          <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasLocation> :Chennai .
+
+
+###  http://change.this.to.your.github.raw.data.file.ttl#Google
+:Google rdf:type owl:NamedIndividual ;
+        <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasLocation> :Baltimore .
+
+
+###  http://change.this.to.your.github.raw.data.file.ttl#Immanuel
+:Immanuel rdf:type owl:NamedIndividual ;
+          <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasAge> 2 ;
+          <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSex> "Male" .
+
+
+###  http://change.this.to.your.github.raw.data.file.ttl#Kennedy
+:Kennedy rdf:type owl:NamedIndividual ;
+         <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasFather> :Sirumani ;
+         <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasMother> :Teresa ;
+         <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#livesIn> :Chennai ;
+         <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasAge> 56 ;
+         <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSSN> "BOWB39U22" ;
+         <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSex> "Male" .
+
+
+###  http://change.this.to.your.github.raw.data.file.ttl#Monica
+:Monica rdf:type owl:NamedIndividual ;
+        <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasEmployer> :Google ;
+        <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasFather> :Kennedy ;
+        <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#livesIn> :Baltimore ;
+        <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasAge> 26 ;
+        <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSSN> "SINIE34792" ;
+        <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSex> "Female" .
+
+
+###  http://change.this.to.your.github.raw.data.file.ttl#Reeta
+:Reeta rdf:type owl:NamedIndividual ;
+       <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasChildren> :Monica ,
+                                                                                               :Sophia ;
+       <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasAge> 56 ;
+       <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSSN> "SBO3Y482G" ;
+       <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSex> "Female" .
+
+
+###  http://change.this.to.your.github.raw.data.file.ttl#Sherlin
+:Sherlin rdf:type owl:NamedIndividual ;
+         <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasAge> 15 ;
+         <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSex> "Female" .
+
+
+###  http://change.this.to.your.github.raw.data.file.ttl#Sirumani
+:Sirumani rdf:type owl:NamedIndividual ;
+          <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasAge> 94 ;
+          <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSSN> "EINKL34792" ;
+          <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSex> "Male" .
+
+
+###  http://change.this.to.your.github.raw.data.file.ttl#Sophia
+:Sophia rdf:type owl:NamedIndividual ;
+        <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasFather> :Kennedy ;
+        <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasAge> 23 ;
+        <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSSN> "KNFLWH3892" ;
+        <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSex> "Female" .
+
+
+###  http://change.this.to.your.github.raw.data.file.ttl#Teresa
+:Teresa rdf:type owl:NamedIndividual ;
+        <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasAge> 92 ;
+        <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSSN> "NOWN39U3N" ;
+        <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSex> "Female" .
+
+
+###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,10 @@
+# Find rivers in Maryland and (optionally) their lengths, ordered from longest to shortest
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX yago: <http://dbpedia.org/class/yago/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT ?P ?Q WHERE {?P rdf:type dbo:River.?P dbo:state dbr:Maryland. OPTIONAL {?P dbo:length ?Q} }ORDER BY DESC(?Q)
+

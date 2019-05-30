@@ -1,0 +1,43 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix gc: <http://www.daml.org/2001/01/gedcom/gedcom#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+gc:parent owl:inverseOf gc:child.
+gc:grandparent owl:inverseOf gc:grandchild.
+gc:ancestor owl:inverseOf gc:descendent.
+gc:sibling a owl:SymmetricProperty.
+gc:spouse a owl:SymmetricProperty.
+gc:ancestor a owl:TransitiveProperty.
+gc:parent rdfs:subPropertyOf gc:ancestor.
+
+#children loves their parents
+#children know their parents.
+{?C gc:parent ?P}=>{?C gc:loves ?P}.
+{?C gc:parent ?P}=>{?C foaf:knows ?P}.
+
+#Parent of children know their parents.
+
+{?C gc:parent ?P. ?P gc:parent ?GP} => {?C gc:grandparent ?GP}.
+{?P gc:parent ?GP}=>{?P foaf:knows ?GP}.
+{?GP gc:parent ?P}=>{?GP foaf:knows ?P}.
+
+#Different from each other
+{?C gc:givenName _:name0. ?P gc:givenName _:name1. _:name0 string:notMatches _:name1}=>{?C gc:differentFrom ?P}.
+
+#spouse knows each other
+{?spouse gc:spouse ?C}=>{?spouse foaf:knows ?C}.
+
+
+#Age differences
+{?C gc:age _:name0. ?P gc:age _:name1. _:name0 math:greaterThan _:name1}=>{?C gc:ElderTo ?P}.
+{?C gc:age _:name0. ?P gc:age _:name1. _:name0 math:lessThan _:name1}=>{?C gc:YoungerTo ?P}.
+
+
+#Phone number not equal
+{?C gc:phone _:name0. ?P gc:phone _:name1. _:name0 math:notEqualTo _:name1}=>{?C gc:PhonenumberNotEqual ?P}.
+
+

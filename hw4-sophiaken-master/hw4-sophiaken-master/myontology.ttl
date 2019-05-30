@@ -1,0 +1,336 @@
+@prefix : <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26> .
+
+<http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasChildren
+:hasChildren rdf:type owl:ObjectProperty ;
+             owl:inverseOf :hasParent ;
+             rdfs:domain :Adult ;
+             rdfs:range :Person ;
+             rdfs:comment "Every parent may have one or more child" ;
+             rdfs:label "hasChild" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasEmployee
+:hasEmployee rdf:type owl:ObjectProperty ;
+             owl:inverseOf :hasEmployer ;
+             rdfs:domain :Organisation ;
+             rdfs:range :Adult ;
+             rdfs:comment "All Company has employees" ;
+             rdfs:label "hasEmployee" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasEmployer
+:hasEmployer rdf:type owl:ObjectProperty ;
+             rdfs:domain :Adult ;
+             rdfs:range :Organisation ;
+             rdfs:comment "Every employee will have  an employer" ;
+             rdfs:label "hasEmployer" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasFather
+:hasFather rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasParent ;
+           rdfs:domain :Person ;
+           rdfs:range :Man .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasGrandchild
+:hasGrandchild rdf:type owl:ObjectProperty ;
+               owl:inverseOf :hasGrandparents ;
+               rdfs:domain :Adult ;
+               rdfs:range :Person ;
+               owl:propertyChainAxiom ( :hasChildren
+                                        :hasChildren
+                                      ) ;
+               rdfs:comment "Every Grandparent has one or more grandchild" ;
+               rdfs:label "hasGrandchild" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasGrandfather
+:hasGrandfather rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasGrandparents ,
+                                   [ owl:inverseOf :hasGrandchild
+                                   ] ;
+                rdfs:domain :Person ;
+                rdfs:range :Man .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasGrandmother
+:hasGrandmother rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasGrandparents ,
+                                   [ owl:inverseOf :hasGrandchild
+                                   ] ;
+                rdfs:domain :Person ;
+                rdfs:range :Woman .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasGrandparents
+:hasGrandparents rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Person ;
+                 rdfs:range :Adult ;
+                 owl:propertyChainAxiom ( :hasParent
+                                          :hasParent
+                                        ) ;
+                 rdfs:comment "Every grandchild will have a grandparent" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasLocation
+:hasLocation rdf:type owl:ObjectProperty ;
+             rdfs:domain :Organisation ;
+             rdfs:range :Place ;
+             rdfs:comment "Every Organization will have a location" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasMother
+:hasMother rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasParent ,
+                              [ owl:inverseOf :hasChildren
+                              ] ;
+           rdfs:domain :Person ;
+           rdfs:range :Woman .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasParent
+:hasParent rdf:type owl:ObjectProperty ;
+           rdfs:domain :Person ;
+           rdfs:range :Adult ;
+           owl:propertyChainAxiom ( :hasFather
+                                  ) ,
+                                  ( :hasMother
+                                  ) ;
+           rdfs:comment "All parents will have atleast one child" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#livesIn
+:livesIn rdf:type owl:ObjectProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Person ;
+         rdfs:range :Place ;
+         rdfs:comment "Indicates the location of a physical property" ;
+         rdfs:label "livesIn" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Latitude
+:Latitude rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Place ;
+          rdfs:range owl:real ;
+          rdfs:comment "Latitude for every location" ;
+          rdfs:label "Latitude" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Longitude
+:Longitude rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Place ;
+           rdfs:range owl:real ;
+           rdfs:comment "All location have longitude" ;
+           rdfs:label "Longitude" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasAge
+:hasAge rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Person ;
+        rdfs:range xsd:nonNegativeInteger ;
+        rdfs:comment "Every person has age" ;
+        rdfs:label "Age" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSSN
+:hasSSN rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :Person ;
+        rdfs:range xsd:string ;
+        rdfs:comment "Every Employee must have a SSN" ;
+        rdfs:label "hasSSN" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#hasSex
+:hasSex rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Person ;
+        rdfs:range xsd:string ,
+                   [ rdf:type rdfs:Datatype ;
+                     owl:oneOf [ rdf:type rdf:List ;
+                                 rdf:first "Female" ;
+                                 rdf:rest [ rdf:type rdf:List ;
+                                            rdf:first "Male" ;
+                                            rdf:rest [ rdf:type rdf:List ;
+                                                       rdf:first "Unknown" ;
+                                                       rdf:rest rdf:nil
+                                                     ]
+                                          ]
+                               ]
+                   ] ;
+        rdfs:comment "Every person should have sex that is  either male or female." ;
+        rdfs:label "hasSex" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Abstract_object
+:Abstract_object rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing ;
+                 rdfs:comment "" ,
+                              "Abstract objects cannot be a physical object" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Adult
+:Adult rdf:type owl:Class ;
+       owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasAge ;
+                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                         owl:onDatatype xsd:nonNegativeInteger ;
+                                                                         owl:withRestrictions ( [ xsd:minInclusive "18"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                              )
+                                                                       ]
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ;
+       rdfs:subClassOf :Person ;
+       owl:disjointWith :Children ,
+                        :Infant ;
+       rdfs:comment "Adult is a person whose age is above 18" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Animate
+:Animate rdf:type owl:Class ;
+         rdfs:subClassOf :Physical_object ;
+         owl:disjointWith :Inanimate .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Boy
+:Boy rdf:type owl:Class ;
+     rdfs:subClassOf :Male ;
+     owl:disjointWith :Girl .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Children
+:Children rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasAge ;
+                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                            owl:onDatatype xsd:nonNegativeInteger ;
+                                                                            owl:withRestrictions ( [ xsd:minExclusive "3"^^xsd:nonNegativeInteger
+                                                                                                   ]
+                                                                                                   [ xsd:maxExclusive "18"^^xsd:nonNegativeInteger
+                                                                                                   ]
+                                                                                                 )
+                                                                          ]
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Person ;
+          owl:disjointWith :Infant ;
+          rdfs:comment "Children are persons whose age is above 3 and below 18" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Female
+:Female rdf:type owl:Class ;
+        rdfs:subClassOf :Sexual_reproducers ;
+        owl:disjointWith :Male ;
+        rdfs:comment "Indicates the gender of a sexual reproducer" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Girl
+:Girl rdf:type owl:Class ;
+      rdfs:subClassOf :Female .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Inanimate
+:Inanimate rdf:type owl:Class ;
+           rdfs:subClassOf :Physical_object .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Infant
+:Infant rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasAge ;
+                                                     owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                          owl:onDatatype xsd:nonNegativeInteger ;
+                                                                          owl:withRestrictions ( [ xsd:maxExclusive "3"^^xsd:nonNegativeInteger
+                                                                                                 ]
+                                                                                               )
+                                                                        ]
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf :Person ;
+        rdfs:comment "Infant is a person whose age is below 3" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Male
+:Male rdf:type owl:Class ;
+      rdfs:subClassOf :Sexual_reproducers ;
+      rdfs:comment "Indicates the gender of the sexual reproducer" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Man
+:Man rdf:type owl:Class ;
+     rdfs:subClassOf :Adult ;
+     owl:disjointWith :Woman .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Non_sexual_reproducer
+:Non_sexual_reproducer rdf:type owl:Class ;
+                       rdfs:subClassOf :Animate ;
+                       owl:disjointWith :Sexual_reproducers ;
+                       rdfs:comment "The ones that cannot reproduce" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Organisation
+:Organisation rdf:type owl:Class ;
+              rdfs:subClassOf :Abstract_object ;
+              rdfs:comment "It is an abstract object that might have an abstract object value of place" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf :Sexual_reproducers .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Physical_object
+:Physical_object rdf:type owl:Class ;
+                 rdfs:comment "Physical object cannot be an abstract object but can have relations with abstract object ." .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Place
+:Place rdf:type owl:Class ;
+       rdfs:subClassOf :Abstract_object ;
+       rdfs:comment "Place can be location of an physical object" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Sexual_reproducers
+:Sexual_reproducers rdf:type owl:Class ;
+                    rdfs:subClassOf :Animate ;
+                    rdfs:comment "The one's that can reproduce" .
+
+
+###  http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26#Woman
+:Woman rdf:type owl:Class ;
+       rdfs:subClassOf :Adult .
+
+
+###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi

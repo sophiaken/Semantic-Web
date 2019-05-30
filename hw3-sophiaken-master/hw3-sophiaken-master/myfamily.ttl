@@ -1,0 +1,125 @@
+# enter information on your immediate family using Turtle syntax (feel free to
+# invent names to protect their privacy
+
+@prefix : <#> .
+@prefix gc: <http://www.daml.org/2001/01/gedcom/gedcom#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+# data from the Bible in GEDCOM form
+
+:fam1 a gc:Family .
+:Sophia gc:sex gc:Female;
+  gc:givenName "Sophia";
+  foaf:nick "Sophi";
+  gc:phone "1234567851";
+  gc:age "22";
+  gc:childIn :fam1 .
+  
+
+:Monica gc:sex gc:Female;
+  gc:givenName "Monica";
+  foaf:nick "ria";
+  gc:phone "9087654901";
+  gc:age "25";
+  gc:childIn :fam1 .
+
+:Kennedy gc:sex gc:Male;
+  gc:givenName "Kennedy";
+  foaf:nick "Mich";
+  gc:phone "346738291";
+  gc:age "55";
+  gc:spouseIn :fam1;
+  gc:birth [a gc:Birth; gc:"Chennai"; gc:date "08/28/1964"] .
+
+:Reeta gc:sex gc:Female;
+  gc:givenName "Reeta";
+  foaf:nick "Rose";
+  gc:phone "5643289017";
+  gc:age "55";
+  gc:spouseIn :fam1 .
+
+# [ ] a owl:AllDifferent; owl:distinctMembers (:Sophia :Monica :Kennedy :Reeta) .
+
+
+:fam2 a gc:Family .
+
+:Victor gc:sex gc:Male;
+  gc:givenName "Victor";
+  foaf:nick "Vicky";
+  gc:phone "234156780";
+  gc:age "32";
+  gc:childIn :fam2 .
+
+:Daisy gc:sex gc:Female;
+  gc:age "40";
+  foaf:nick "Nicky";
+  gc:phone "2346549020";
+  gc:givenName "Daisy";
+  gc:childIn :fam2 .
+
+:Rathinam gc:sex gc:Male;
+  gc:givenName "Rathinam";
+  foaf:nick "Raty";
+  gc:phone "237654098";
+  gc:age "69";
+  gc:spouseIn :fam2 .
+  
+:Jaya gc:sex gc:Female;
+  gc:givenName "Jaya";
+  foaf:nick "Jay";
+  gc:phone "278906752";
+  gc:age "65";
+  gc:spouseIn :fam2 .
+
+
+# [ ] a owl:AllDifferent; owl:distinctMembers (:Victor :Daisy :Rathinam :Jaya) .
+
+
+
+:fam0 a gc:Family .
+
+:Kennedy gc:sex gc:Male;
+  gc:givenName "Kennedy";
+  gc:childIn :fam0 .
+
+:Jaya gc:sex gc:Female;
+  gc:givenName "Jaya";
+  gc:childIn :fam0 .
+
+:Sirumani gc:sex gc:Male;
+  gc:givenName "Sirumani";
+  gc:spouseIn :fam0;
+  gc:age "96";
+  gc:birth [a gc:Birth; gc:"Pudukottai"; gc:date "08/02/1923"] .
+
+  
+:Teresa gc:sex gc:Female;
+  gc:givenName "Teresa";
+  gc:age "89";
+  gc:spouseIn :fam0 .
+
+# [ ] a owl:AllDifferent; owl:distinctMembers (:Kennedy :Jaya :Sirumani :Teresa) .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

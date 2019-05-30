@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26" uri="myontology.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26" uri="myontology.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/sophia/ontologies/2018/10/untitled-ontology-26" uri="file:/C:/Users/Sophia/Desktop/git/hw4-sophiaken-master/hw4-sophiaken-master/myontology.ttl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>

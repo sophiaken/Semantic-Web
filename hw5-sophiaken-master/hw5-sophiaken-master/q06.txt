@@ -1,0 +1,10 @@
+# find rivers in Maryland and what non-river body of water they ultimately flow into
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX yago: <http://dbpedia.org/class/yago/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT ?P ?Q WHERE {?P rdf:type dbo:River; dbo:state dbr:Maryland.?P dbo:riverMouth* ?Q.FILTER NOT EXISTS{?Q rdf:type dbo:River}
+}

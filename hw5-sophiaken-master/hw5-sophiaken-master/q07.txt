@@ -1,0 +1,11 @@
+# find the number of US rivers that ultimately flow into a non-river water body and give a sample river for each.  a river ultimately flows into a water body if the water body is not itself a river and either the river flows into it directly, or flows into another river that ultimately flows into it.
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX yago: <http://dbpedia.org/class/yago/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+
+SELECT  ?Waterbody (COUNT(?River) AS ?count)(SAMPLE(?River) AS ?Example) WHERE{?River rdf:type dbo:River.?USstates rdf:type yago:StatesOfTheUnitedStates.?River dbo:state ?USstates.?River dbo:riverMouth* ?Waterbody;dbo:state ?USstate.FILTER NOT EXISTS{?Waterbody rdf:type dbo:River}}ORDER BY DESC(?count)

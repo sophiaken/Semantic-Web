@@ -1,0 +1,9 @@
+# find rivers in Maryland and (optionally) their lengths
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?P ?Q WHERE {?P rdf:type dbo:River.?P dbo:state dbr:Maryland. OPTIONAL {?P dbo:length ?Q}}
+

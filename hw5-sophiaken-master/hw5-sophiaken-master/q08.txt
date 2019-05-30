@@ -1,0 +1,10 @@
+# Find people who are their own grandparent 
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX yago: <http://dbpedia.org/class/yago/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT ?Person WHERE {?Person rdf:type dbo:Person.?father rdf:type dbo:Person.?Person dbo:parent ?father.?father dbo:parent ?Person.}

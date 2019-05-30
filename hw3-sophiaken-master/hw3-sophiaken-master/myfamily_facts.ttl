@@ -1,0 +1,581 @@
+#Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp 
+        #    using base file:///home/sophia/hw3-sophiaken/myfamily.ttl
+        
+#  Notation3 generation by
+#       notation3.py,v 1.200 2007/12/11 21:18:08 syosi Exp
+
+#   Base was: file:///home/sophia/hw3-sophiaken/myfamily.ttl
+     @prefix : <#> .
+    @prefix gc: <http://www.daml.org/2001/01/gedcom/gedcom#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+    
+    "08/02/1923"     a rdfs:Resource .
+    
+    "08/28/1964"     a rdfs:Resource .
+    
+    "1234567851"     a rdfs:Resource .
+    
+    "22"     a rdfs:Resource .
+    
+    "234156780"     a rdfs:Resource .
+    
+    "2346549020"     a rdfs:Resource .
+    
+    "237654098"     a rdfs:Resource .
+    
+    "25"     a rdfs:Resource .
+    
+    "278906752"     a rdfs:Resource .
+    
+    "32"     a rdfs:Resource .
+    
+    "346738291"     a rdfs:Resource .
+    
+    "40"     a rdfs:Resource .
+    
+    "55"     a rdfs:Resource .
+    
+    "5643289017"     a rdfs:Resource .
+    
+    "65"     a rdfs:Resource .
+    
+    "69"     a rdfs:Resource .
+    
+    "89"     a rdfs:Resource .
+    
+    "9087654901"     a rdfs:Resource .
+    
+    "96"     a rdfs:Resource .
+    
+    "Chennai"     a rdfs:Resource .
+    
+    "Daisy"     a rdfs:Resource .
+    
+    "Jay"     a rdfs:Resource .
+    
+    "Jaya"     a rdfs:Resource .
+    
+    "Kennedy"     a rdfs:Resource .
+    
+    "Mich"     a rdfs:Resource .
+    
+    "Monica"     a rdfs:Resource .
+    
+    "Nicky"     a rdfs:Resource .
+    
+    "Pudukottai"     a rdfs:Resource .
+    
+    "Rathinam"     a rdfs:Resource .
+    
+    "Raty"     a rdfs:Resource .
+    
+    "Reeta"     a rdfs:Resource .
+    
+    "Rose"     a rdfs:Resource .
+    
+    "Sirumani"     a rdfs:Resource .
+    
+    "Sophi"     a rdfs:Resource .
+    
+    "Sophia"     a rdfs:Resource .
+    
+    "Teresa"     a rdfs:Resource .
+    
+    "Vicky"     a rdfs:Resource .
+    
+    "Victor"     a rdfs:Resource .
+    
+    "ria"     a rdfs:Resource .
+    
+    rdf:type     a rdf:Property,
+                rdfs:Resource .
+    
+    :Daisy     a rdfs:Resource;
+         gc:ElderTo :Monica,
+                :Sophia,
+                :Victor;
+         gc:PhonenumberNotEqual :Jaya,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Sophia,
+                :Victor;
+         gc:YoungerTo :Jaya,
+                :Kennedy,
+                :Rathinam,
+                :Reeta,
+                :Sirumani,
+                :Teresa;
+         gc:age "40";
+         gc:childIn :fam2;
+         gc:differentFrom :Jaya,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Sirumani,
+                :Sophia,
+                :Teresa,
+                :Victor;
+         gc:father :Rathinam;
+         gc:givenName "Daisy";
+         gc:grandfather :Sirumani;
+         gc:grandmother :Teresa;
+         gc:grandparent :Sirumani,
+                :Teresa;
+         gc:loves :Jaya,
+                :Rathinam;
+         gc:mother :Jaya;
+         gc:parent :Jaya,
+                :Rathinam;
+         gc:phone "2346549020";
+         gc:sex gc:Female;
+         <http://xmlns.com/foaf/0.1/knows> :Jaya,
+                :Rathinam;
+         <http://xmlns.com/foaf/0.1/nick> "Nicky" .
+    
+    :Jaya     a rdfs:Resource;
+         gc:ElderTo :Daisy,
+                :Kennedy,
+                :Monica,
+                :Reeta,
+                :Sophia,
+                :Victor;
+         gc:PhonenumberNotEqual :Daisy,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Sophia,
+                :Victor;
+         gc:YoungerTo :Rathinam,
+                :Sirumani,
+                :Teresa;
+         gc:age "65";
+         gc:childIn :fam0;
+         gc:daughter :Daisy;
+         gc:differentFrom :Daisy,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Sirumani,
+                :Sophia,
+                :Teresa,
+                :Victor;
+         gc:father :Sirumani;
+         gc:givenName "Jaya";
+         gc:loves :Sirumani,
+                :Teresa;
+         gc:mother :Teresa;
+         gc:parent :Sirumani,
+                :Teresa;
+         gc:phone "278906752";
+         gc:sex gc:Female;
+         gc:son :Victor;
+         gc:spouseIn :fam2;
+         <http://xmlns.com/foaf/0.1/knows> :Sirumani,
+                :Teresa;
+         <http://xmlns.com/foaf/0.1/nick> "Jay" .
+    
+    :Kennedy     a rdfs:Resource;
+         gc:ElderTo :Daisy,
+                :Monica,
+                :Sophia,
+                :Victor;
+         gc:PhonenumberNotEqual :Daisy,
+                :Jaya,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Sophia,
+                :Victor;
+         gc:YoungerTo :Jaya,
+                :Rathinam,
+                :Sirumani,
+                :Teresa;
+         gc:age "55";
+         gc:birth  [
+             a gc:Birth,
+                    rdfs:Resource;
+             gc: "Chennai";
+             gc:date "08/28/1964" ];
+         gc:childIn :fam0;
+         gc:daughter :Monica,
+                :Sophia;
+         gc:differentFrom :Daisy,
+                :Jaya,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Sirumani,
+                :Sophia,
+                :Teresa,
+                :Victor;
+         gc:father :Sirumani;
+         gc:givenName "Kennedy";
+         gc:loves :Sirumani,
+                :Teresa;
+         gc:mother :Teresa;
+         gc:parent :Sirumani,
+                :Teresa;
+         gc:phone "346738291";
+         gc:sex gc:Male;
+         gc:spouseIn :fam1;
+         <http://xmlns.com/foaf/0.1/knows> :Sirumani,
+                :Teresa;
+         <http://xmlns.com/foaf/0.1/nick> "Mich" .
+    
+    :Monica     a rdfs:Resource;
+         gc:ElderTo :Sophia;
+         gc:PhonenumberNotEqual :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Rathinam,
+                :Reeta,
+                :Sophia,
+                :Victor;
+         gc:YoungerTo :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Rathinam,
+                :Reeta,
+                :Sirumani,
+                :Teresa,
+                :Victor;
+         gc:age "25";
+         gc:childIn :fam1;
+         gc:differentFrom :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Rathinam,
+                :Reeta,
+                :Sirumani,
+                :Sophia,
+                :Teresa,
+                :Victor;
+         gc:father :Kennedy;
+         gc:givenName "Monica";
+         gc:grandfather :Sirumani;
+         gc:grandmother :Teresa;
+         gc:grandparent :Sirumani,
+                :Teresa;
+         gc:loves :Kennedy,
+                :Reeta;
+         gc:mother :Reeta;
+         gc:parent :Kennedy,
+                :Reeta;
+         gc:phone "9087654901";
+         gc:sex gc:Female;
+         <http://xmlns.com/foaf/0.1/knows> :Kennedy,
+                :Reeta;
+         <http://xmlns.com/foaf/0.1/nick> "ria" .
+    
+    :Rathinam     a rdfs:Resource;
+         gc:ElderTo :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Monica,
+                :Reeta,
+                :Sophia,
+                :Victor;
+         gc:PhonenumberNotEqual :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Monica,
+                :Reeta,
+                :Sophia,
+                :Victor;
+         gc:YoungerTo :Sirumani,
+                :Teresa;
+         gc:age "69";
+         gc:daughter :Daisy;
+         gc:differentFrom :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Monica,
+                :Reeta,
+                :Sirumani,
+                :Sophia,
+                :Teresa,
+                :Victor;
+         gc:givenName "Rathinam";
+         gc:phone "237654098";
+         gc:sex gc:Male;
+         gc:son :Victor;
+         gc:spouseIn :fam2;
+         <http://xmlns.com/foaf/0.1/nick> "Raty" .
+    
+    :Reeta     a rdfs:Resource;
+         gc:ElderTo :Daisy,
+                :Monica,
+                :Sophia,
+                :Victor;
+         gc:PhonenumberNotEqual :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Sophia,
+                :Victor;
+         gc:YoungerTo :Jaya,
+                :Rathinam,
+                :Sirumani,
+                :Teresa;
+         gc:age "55";
+         gc:daughter :Monica,
+                :Sophia;
+         gc:differentFrom :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Sirumani,
+                :Sophia,
+                :Teresa,
+                :Victor;
+         gc:givenName "Reeta";
+         gc:phone "5643289017";
+         gc:sex gc:Female;
+         gc:spouseIn :fam1;
+         <http://xmlns.com/foaf/0.1/nick> "Rose" .
+    
+    :Sirumani     a rdfs:Resource;
+         gc:ElderTo :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Sophia,
+                :Teresa,
+                :Victor;
+         gc:age "96";
+         gc:birth  [
+             a gc:Birth,
+                    rdfs:Resource;
+             gc: "Pudukottai";
+             gc:date "08/02/1923" ];
+         gc:daughter :Jaya;
+         gc:differentFrom :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Sophia,
+                :Teresa,
+                :Victor;
+         gc:givenName "Sirumani";
+         gc:granddaughter :Daisy,
+                :Monica,
+                :Sophia;
+         gc:grandson :Victor;
+         gc:sex gc:Male;
+         gc:son :Kennedy;
+         gc:spouseIn :fam0 .
+    
+    :Sophia     a rdfs:Resource;
+         gc:PhonenumberNotEqual :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Victor;
+         gc:YoungerTo :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Sirumani,
+                :Teresa,
+                :Victor;
+         gc:age "22";
+         gc:childIn :fam1;
+         gc:differentFrom :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Sirumani,
+                :Teresa,
+                :Victor;
+         gc:father :Kennedy;
+         gc:givenName "Sophia";
+         gc:grandfather :Sirumani;
+         gc:grandmother :Teresa;
+         gc:grandparent :Sirumani,
+                :Teresa;
+         gc:loves :Kennedy,
+                :Reeta;
+         gc:mother :Reeta;
+         gc:parent :Kennedy,
+                :Reeta;
+         gc:phone "1234567851";
+         gc:sex gc:Female;
+         <http://xmlns.com/foaf/0.1/knows> :Kennedy,
+                :Reeta;
+         <http://xmlns.com/foaf/0.1/nick> "Sophi" .
+    
+    :Teresa     a rdfs:Resource;
+         gc:ElderTo :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Sophia,
+                :Victor;
+         gc:YoungerTo :Sirumani;
+         gc:age "89";
+         gc:daughter :Jaya;
+         gc:differentFrom :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Sirumani,
+                :Sophia,
+                :Victor;
+         gc:givenName "Teresa";
+         gc:granddaughter :Daisy,
+                :Monica,
+                :Sophia;
+         gc:grandson :Victor;
+         gc:sex gc:Female;
+         gc:son :Kennedy;
+         gc:spouseIn :fam0 .
+    
+    :Victor     a rdfs:Resource;
+         gc:ElderTo :Monica,
+                :Sophia;
+         gc:PhonenumberNotEqual :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Sophia;
+         gc:YoungerTo :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Rathinam,
+                :Reeta,
+                :Sirumani,
+                :Teresa;
+         gc:age "32";
+         gc:childIn :fam2;
+         gc:differentFrom :Daisy,
+                :Jaya,
+                :Kennedy,
+                :Monica,
+                :Rathinam,
+                :Reeta,
+                :Sirumani,
+                :Sophia,
+                :Teresa;
+         gc:father :Rathinam;
+         gc:givenName "Victor";
+         gc:grandfather :Sirumani;
+         gc:grandmother :Teresa;
+         gc:grandparent :Sirumani,
+                :Teresa;
+         gc:loves :Jaya,
+                :Rathinam;
+         gc:mother :Jaya;
+         gc:parent :Jaya,
+                :Rathinam;
+         gc:phone "234156780";
+         gc:sex gc:Male;
+         <http://xmlns.com/foaf/0.1/knows> :Jaya,
+                :Rathinam;
+         <http://xmlns.com/foaf/0.1/nick> "Vicky" .
+    
+    :fam0     a gc:Family,
+                rdfs:Resource .
+    
+    :fam1     a gc:Family,
+                rdfs:Resource .
+    
+    :fam2     a gc:Family,
+                rdfs:Resource .
+    
+    gc:     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:Birth     a rdfs:Resource .
+    
+    gc:Family     a rdfs:Resource .
+    
+    gc:Female     a rdfs:Resource .
+    
+    gc:Male     a rdfs:Resource .
+    
+    gc:age     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:birth     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:childIn     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:date     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:daughter     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:father     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:givenName     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:granddaughter     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:grandfather     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:grandmother     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:grandparent     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:grandson     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:mother     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:parent     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:phone     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:sex     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:son     a rdf:Property,
+                rdfs:Resource .
+    
+    gc:spouseIn     a rdf:Property,
+                rdfs:Resource .
+    
+    rdf:Property     a rdfs:Resource .
+    
+    rdfs:Resource     a rdfs:Resource .
+    
+    <http://xmlns.com/foaf/0.1/nick>     a rdf:Property,
+                rdfs:Resource .
+    
+#ENDS
